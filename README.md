@@ -141,6 +141,13 @@ Ensure you're connected to the internet since it depends on Stellar and Firebase
 
 ---
 
+## 🔐 Security Note
+This project uses **Stellar testnet credentials** (fake money).  
+- Keys are intentionally visible for judge testing.  
+- Get new testnet keys anytime from [Stellar Laboratory](https://laboratory.stellar.org).
+
+---
+
 🙌 Made With Love
 By Saara Darakshan
 For HackHazard Hackathon 2025 💙
