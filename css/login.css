@@ -1,0 +1,200 @@
+#loginPage {
+    height: 100vh;
+    width: 100%;
+    background: url('/violet.jpg'); /* Deep violet gradient */
+    /* background: linear-gradient(-45deg, #a1c4fd, #c2e9fb, #d0eaff, #e0f7ff); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .login-container {
+    /* background: rgba(45, 10, 69, 0.75); Slightly darker translucent box */
+    /* background: url('/violet.jpg'); */
+    /* background: rgb(39, 39, 86); */
+    background: #0f0c29;
+  border: 1px solid #00f5d4;
+  box-shadow: 0 0 15px rgba(0, 245, 212, 0.3);
+  color: white;
+    border-radius: 18px;
+    padding: 50px 35px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 30px rgba(234, 229, 234, 0.6); /* Glow effect */
+    backdrop-filter: blur(15px);
+  }
+  
+  .login-container h2 {
+    color: #ffffff;
+    margin-bottom: 35px;
+    font-size: 2.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(255, 0, 255, 0.7), 0 0 25px rgba(255, 0, 255, 0.5); /* Sharper glow and bigger shadow */
+  }
+  
+  .login-container input {
+    background: rgba(255, 255, 255, 0.1); /* Lighter input background */
+    color: #e5b3ff; /* Soft lilac text */
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 12px;
+    width: 100%;
+    margin: 12px 0;
+    font-size: 1rem;
+    transition: 0.3s;
+  }
+  
+  .login-container input::placeholder {
+    color: #b08aff; /* Light purple placeholder */
+    font-weight: 400;
+  }
+  
+  .login-container input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 8px rgba(255, 105, 180, 0.3);
+    border-color: #ff33cc;
+  }
+  
+  .login-container button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff4d94, #8e24aa); /* Strong gradient for button */
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 6px 25px rgba(255, 0, 255, 0.3);
+  }
+  
+  .login-container button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 35px rgba(255, 0, 255, 0.4);
+  }
+  
+    /* .captcha-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15); /* Softer background */
+    /* margin-top: 15px;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffb3ff;
+  } 
+  
+  #refreshCaptcha {
+    color: #ff66ff;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 0, 255, 0.6);
+  } */
+
+  .captcha-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #3a2e4d;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .captcha-text {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 10px;
+    user-select: none;
+  }
+  
+  .refresh-btn {
+    background: linear-gradient(90deg, #ff4ecd, #8b5cf6);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  /* Spinner */
+.spinner {
+  display: none;
+  border: 4px solid #e0e0e0;
+  border-top: 4px solid #ff66ff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 15px auto;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Toast */
+.toast {
+  visibility: hidden;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  padding: 10px;
+  position: relative;
+  top: 10px;
+  font-weight: 600;
+  margin-top: 15px;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+@keyframes fadein {
+  from { top: 0; opacity: 0; }
+  to { top: 10px; opacity: 1; }
+}
+@keyframes fadeout {
+  from { top: 10px; opacity: 1; }
+  to { top: 0; opacity: 0; }
+}
+
+.error-text {
+  color: #ff9ccc;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* signup */
+.signup-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.signup-link, .login-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.signup-link a, .login-link a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.signup-link a:hover, .login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Add any additional styling you need for the signup form */

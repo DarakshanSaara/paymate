@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Group Split | PayMate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📢 Group Split Payments</h1>
+
+    <form id="splitForm">
+      <label for="groupName">Group Name</label>
+      <input type="text" id="groupName" placeholder="e.g., Goa Trip" required><br><br>
+
+      <label for="members">Enter Members (comma separated Wallet IDs)</label>
+      <input type="text" id="members" placeholder="GABC..., GXYZ..., GMNO..." required><br><br>
+
+      <label for="totalAmount">Total Amount (in XLM)</label>
+      <input type="number" id="totalAmount" placeholder="e.g., 300" required><br><br>
+
+      <button type="submit">🔄 Split & Show Shares</button>
+    </form>
+
+    <br>
+<button id="viewHistoryBtn" onclick="window.location.href='split-history.html'">📄 View Split History</button>
+
+    <div id="splitResult" style="margin-top: 20px;"></div>
+    <br>
+    <button class="square-button" onclick="window.location.href='index.html'">🏠 Back to Wallet</button>
+  </div>
+
+  <!-- Firebase compat version -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<script>
+  // Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCy8onPnPTKTFMd5Nu6ASzbwgyMlyWr0YM",
+    authDomain: "paymate-e7be4.firebaseapp.com",
+    projectId: "paymate-e7be4",
+    storageBucket: "paymate-e7be4.firebasestorage.app",
+    messagingSenderId: "816503320540",
+    appId: "1:816503320540:web:2a69855b7b787606b62919",
+    measurementId: "G-4SC4SBST3S"
+  };
+
+  // Initialize Firebase
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  } else {
+    firebase.app(); // if already initialized, use that one
+  }
+
+  // Firestore initialization
+  const db = firebase.firestore();
+</script>
+  <script src="../js/split.js"></script>
+  
+</body>
+</html>

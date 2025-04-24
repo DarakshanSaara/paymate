@@ -1,0 +1,99 @@
+<!-- history.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transaction History</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transaction History</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  
+</head>
+<body>
+  <div class="container">
+    <h1>📄 Transaction History</h1>
+
+    <br><br>
+    <!-- Search and Filter Section -->
+<div class="filter-section">
+  <input type="text" id="searchAddress" placeholder="🔍 Search by Address" />
+  <input type="number" id="searchAmount" placeholder="🔢 Filter by Amount" />
+  <div class="button-group">
+    <div>
+  <select id="typeFilter">
+    <option value="">🔁 Filter by Type</option>
+    <option value="Sent">Sent</option>
+    <option value="Received">Received</option>
+  </select>
+  <button onclick="applyFirestoreFilters()">Apply Filters</button>
+</div>
+  <!-- <button onclick="resetTransactionFilter()">Reset</button> -->
+</div>
+</div>
+<br>
+
+<!-- Display History -->
+<!-- <div id="transactionHistory"></div> -->
+
+  <h2>Showing last 10 transactions from Firebase Firestore ⛅</strong></h2>
+  <br>
+  <ul id="transaction-list"><br></ul>
+</div>
+
+<div class="container">
+  <h2>Blockchain Transaction History</h2>
+</div>
+<div id="blockchainHistory"></div>
+
+<a href="https://console.firebase.google.com/u/0/project/paymate-e7be4/firestore/databases/-default-/data/~2Ftransactions~2FIYdEmh4srDIjsIihk0Nj?fb_gclid=CjwKCAjwwqfABhBcEiwAZJjC3lcuCPmlFd3qZuvvLK6RHDZismSw6MkxW4jrkTBbkhzP9qWWuH4r8RoCvYwQAvD_BwE" 
+   target="_blank" 
+   style="text-decoration: none;">
+  <button style="justify-content: center; margin-top: 20px; padding: 10px 20px; background: #00c6ff; color: white; border: none; border-radius: 8px; cursor: pointer;">
+    🔍 View Firebase Transaction History
+  </button>
+</a>
+
+
+    <div id="transactionHistory"></div>
+    <button onclick="window.location.href='index.html'">🔙 Back to Home</button>
+
+    <br>
+    <!-- <a href="index.html">⬅️ Back to Home</a> -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/stellar-sdk@10.4.0/dist/stellar-sdk.min.js"></script>
+  <!-- <script src="app.js"></script> -->
+  
+  <!-- Firebase compat version -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<script>
+  // Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCy8onPnPTKTFMd5Nu6ASzbwgyMlyWr0YM",
+    authDomain: "paymate-e7be4.firebaseapp.com",
+    projectId: "paymate-e7be4",
+    storageBucket: "paymate-e7be4.firebasestorage.app",
+    messagingSenderId: "816503320540",
+    appId: "1:816503320540:web:2a69855b7b787606b62919",
+    measurementId: "G-4SC4SBST3S"
+  };
+
+  // Initialize Firebase
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  } else {
+    firebase.app(); // if already initialized, use that one
+  }
+
+  // Firestore initialization
+  const db = firebase.firestore();
+</script>
+<script src="../js/common.js"></script>
+  <script src="../js/history.js"></script>
+  
+</body>
+</html>
