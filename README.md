@@ -149,6 +149,11 @@ This project uses **Stellar testnet credentials** (fake money).
 
 ---
 
-🙌 Made With Love
+Crafted with purpose and passion 💡
 By Saara Darakshan
-For HackHazard Hackathon 2025 💙
+As part of HackHazard Hackathon 2025 💙
+
+---
+
+📄 License
+This project is licensed under the MIT License — feel free to use and contribute!
