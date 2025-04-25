@@ -147,24 +147,6 @@
 //   }
 // });
 
-// // =================== FIREBASE FIRESTORE ===================
-// // Initialize Firebase and Firestore (You will need to set up Firebase config)
-// // const myFirebaseConfig = {
-// //   apiKey: "AIzaSyCy8onPnPTKTFMd5Nu6ASzbwgyMlyWr0YM",
-// //     authDomain: "paymate-e7be4.firebaseapp.com",
-// //     projectId: "paymate-e7be4",
-// //     storageBucket: "paymate-e7be4.firebasestorage.app",
-// //     messagingSenderId: "816503320540",
-// //     appId: "1:816503320540:web:2a69855b7b787606b62919",
-// //     measurementId: "G-4SC4SBST3S"
-// // };
-
-// // // Initialize Firebase
-// // firebase.initializeApp(myFirebaseConfig);
-
-// // // Get Firestore database instance
-// // myDb = firebase.firestore();
-
 // // Save transaction to Firebase Firestore
 // function saveTransactionToFirebase(sender, receiver, amount) {
 //   myDb.collection("transactions").add({
