@@ -145,6 +145,7 @@ Ensure you're connected to the internet since it depends on Stellar and Firebase
 This project uses **Stellar testnet credentials** (fake money).  
 - Keys are intentionally visible for judge testing.  
 - Get new testnet keys anytime from [Stellar Laboratory](https://laboratory.stellar.org).
+- The Firebase API key exposed in the code is safe as it's required for client-side access. Proper Firestore security rules have been applied to prevent unauthorized access.
 
 ---
 
