@@ -1,115 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Student Pay App</title>
-  <script src="https://cdn.jsdelivr.net/npm/stellar-sdk@10.4.0/dist/stellar-sdk.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-  
+  <meta charset="UTF-8">
+  <title>Login | PayMate</title>
+  <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-  <div class="blur-circle blur1"></div>
-  <div class="blur-circle blur2"></div>
-  
-  <label class="switch">
-    <input type="checkbox" id="themeToggle">
-    <span class="slider round"></span>
-  </label>
+  <div id="loginPage">
+    <div class="login-container">
+      <h2>Welcome to PayMate</h2>
+      <form id="loginForm">
+        <input type="text" id="loginUsername" placeholder="Username" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
 
-  <div class="container">
-    <h1>Welcome to Stellar Student Pay 💸</h1>
-    
-    <div class="balance-display">
-      <p>Your balance: <span id="balance" style="font-weight: bold;">Loading...</span></p>
-      <p id="lastUpdated" style="font-size: 12px; color: gray;"></p>
+        <div class="captcha-container">
+          <span id="captchaText" class="captcha-text"></span>
+          <button type="button" id="refreshCaptcha" class="refresh-btn">↻</button>
+        </div>
+
+        <input type="text" id="captchaInput" placeholder="Enter Captcha" required />
+        <button type="submit">Login</button>
+      </form>
+      <p class="signup-link">Don't have an account? <a href="signup.html">Sign up</a></p>
     </div>
-
-    <h2>Send XLM</h2>
-    <form id="sendForm">
-      <label for="destination">Enter Recipient Public Key</label>
-      <input type="text" id="destination" placeholder="Recipient Public Key" required><br><br>
-    
-      <label for="amount">Enter Amount to Send</label>
-      <input type="number" id="amount" placeholder="Amount to Send" required><br><br>
-    
-      <label for="memo">Add an Optional Memo</label>
-      <input type="text" id="memo" placeholder="Optional Memo" /><br><br>
-    
-      <button type="submit">Send</button>
-    </form>
-
-    <div class="action-buttons">
-      <button onclick="fetchBalance()">🔄 Refresh Balance</button>
-      <button onclick="window.open(`https://stellar.expert/explorer/testnet/account/${localStorage.getItem('publicKey')}`, '_blank')">
-        📖 View Wallet Activity on Blockchain
-      </button>
-    </div>
-
-    <p id="statusMsg"></p>
-
-    <div id="walletExplorerLinks" style="margin-top: 20px; font-size: 15px;">
-      <h3>🔍 View Wallet Transactions</h3>
-      <p id="walletALink">Wallet A: Loading...</p>
-      <p id="walletBLink">Wallet B: Not set</p>
-    </div>
-
-    <div class="features">
-      <button class="square-button" onclick="window.location.href='history.html'">📄 View Transaction History</button>
-      <button class="square-button" onclick="window.location.href='receive.html'">💰 Receive Payment</button>
-      <button class="square-button" onclick="window.location.href='split.html'">👥 Group Split Payment</button>
-      <button class="square-button" onclick="window.location.href='analytics.html'">📈 View Analytics</button>
-    </div>
-
-    <button id="exportHistoryBtn">Export History</button>
-
-    <div class="logout-container">
-      <button id="logoutBtn" onclick="logout()">🚪 Logout</button>
-    </div>
-    <!-- <button id="logoutBtn" onclick="logout()">🚪 Logout</button> -->
   </div>
 
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <!-- Firebase compat version -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 
-  <!-- Buffer -->
-  <script src="https://cdn.jsdelivr.net/npm/buffer@6.0.3/dist/buffer.min.js"></script>
+<script>
+  // Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCy8onPnPTKTFMd5Nu6ASzbwgyMlyWr0YM",
+    authDomain: "paymate-e7be4.firebaseapp.com",
+    projectId: "paymate-e7be4",
+    storageBucket: "paymate-e7be4.firebasestorage.app",
+    messagingSenderId: "816503320540",
+    appId: "1:816503320540:web:2a69855b7b787606b62919",
+    measurementId: "G-4SC4SBST3S"
+  };
 
-  <script>
-    // Initialize Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyCy8onPnPTKTFMd5Nu6ASzbwgyMlyWr0YM",
-  authDomain: "paymate-e7be4.firebaseapp.com",
-  projectId: "paymate-e7be4",
-  storageBucket: "paymate-e7be4.firebasestorage.app",
-  messagingSenderId: "816503320540",
-  appId: "1:816503320540:web:2a69855b7b787606b62919",
-  measurementId: "G-4SC4SBST3S"
-};
-
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
-}
-const db = firebase.firestore();
-
-// Check authentication state
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    // User is authenticated
-    console.log("User is logged in:", user);
-    // Optionally, you can update the UI or navigate to another page
+  // Initialize Firebase
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
   } else {
-    // User is not authenticated
-    console.log("User is not logged in.");
-    // You may want to redirect them to the login page
+    firebase.app(); // if already initialized, use that one
   }
-});
-  </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/stellar-sdk@10.4.0/dist/stellar-sdk.min.js"></script>
-
-  <script src="../js/common.js" defer></script>
-  <script src="../js/send.js" defer></script>
+  // Firestore initialization
+  const db = firebase.firestore();
+</script>
+  <script src="../js/login.js"></script>
+  
 </body>
 </html>

@@ -398,6 +398,7 @@
 
 // Stellar Server Connection
 const server = new StellarSdk.Server('https://horizon-testnet.stellar.org');
+localStorage.setItem("publicKey", "GAP2CGWD2XI26RIAEQ5SP5KCNKYV55UVYOJZZE2L74P2UTRVH36RXEN4");
 
 // Use stored or fallback keys
 const publicKey = localStorage.getItem("publicKey") || "GAP2CGWD2XI26RIAEQ5SP5KCNKYV55UVYOJZZE2L74P2UTRVH36RXEN4";
@@ -564,5 +565,5 @@ function saveTransactionToFirebase(sender, receiver, amount) {
 function logout() {
   localStorage.removeItem('loggedIn');
   localStorage.removeItem('currentUser');
-  window.location.href = 'home.html';
+  window.location.href = 'index.html';
 }

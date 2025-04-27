@@ -11,7 +11,7 @@ function verifyOTP() {
       spinner.style.display = "none";
       if (enteredOtp === actualOtp) {
         localStorage.removeItem("otp");
-        window.location.href = "index.html"; // or home page
+        window.location.href = "home.html"; // or home page
       } else {
         errorText.textContent = "❌ Invalid OTP. Try again.";
       }
