@@ -49,10 +49,15 @@ Breakthrough: Integrating Firebase Firestore for transaction history + Stellar p
 
 # Sponsor Technologies Used (if any):
  Groq: How you used Groq
+ 
  Monad: Your blockchain implementation
+ 
  Fluvio: Real-time data handling
+ 
  Base: AgentKit / OnchainKit / Smart Wallet usage
+ 
  Screenpipe: Screen-based analytics or workflows
+ 
  Stellar: Payments, identity, or token usage ✅
 
  ---
@@ -128,8 +133,11 @@ PPT Link: https://drive.google.com/file/d/1IpMjU-E4gxaQuIv3tIVxsWaM0zs110ef/view
 ---
 
 ✅ Tasks & Bonus Checklist
+
  All members of the team completed the mandatory task - Followed at least 2 of our social channels and filled the form (Details in Participant Manual) ✅
+ 
  All members of the team completed Bonus Task 1 - Sharing of Badges and filled the form (2 points) (Details in Participant Manual) ✅
+ 
  All members of the team completed Bonus Task 2 - Signing up for Sprint.dev and filled the form (3 points) (Details in Participant Manual) ✅
 
  ---
@@ -172,13 +180,21 @@ You don't need extra setup; the app uses Stellar's APIs internally for creating 
 
 ## 🧬 Future Scope
 🔒 OAuth login or Google Auth
+
 🖥️ Backend & Data
+
 📲 Progressive Web App (PWA) version
+
 📬 Email-based OTP for 2FA
+
 🧾 Real-time notifications via Firebase Cloud Messaging
+
 📱 Mobile responsive redesign
+
 💬 Communication & Notifications
+
 📈 Advanced Analytics
+
 🌐 Miscellaneous (Multi-Currency Support, Language Localization)
 
 ---
@@ -208,8 +224,3 @@ Grateful for the hackathon experience and excited for what’s ahead! 🚀
 Crafted with purpose and passion 💡
 By Saara Darakshan
 As part of HackHazard Hackathon 2025 💙
-
----
-
-📄 License
-This project is licensed under the MIT License — feel free to use and contribute!
