@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Receive Payment</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Receive Payment</h1>
+    <p>Your Stellar Wallet Address:</p>
+    <p id="publicKeyDisplay" style="word-break: break-all;"></p>
+    <button onclick="copyPublicKey()">📋 Copy Wallet Address</button>
+
+    <h3>QR Code</h3>
+    <!-- <div id="qrCodeContainer"></div> Changed from img to div -->
+    <div id="qrCodeContainer" class="qr-container"></div>
+    
+    <div id="receiveContainer">
+      <h2>Your Stellar Wallet</h2>
+      <p id="publicKeyDisplay"></p>
+      <button onclick="copyPublicKey()">📋 Copy Address</button>
+    
+      <h3>Request a Specific Amount</h3>
+      <input type="number" id="requestAmount" placeholder="Enter amount in XLM" />
+      <button id="generateRequestBtn">🔁 Generate QR for Amount</button>
+    
+      <div id="qrCodeContainer" style="margin-top: 20px;"></div>
+    </div>
+    
+    <br><br>
+    <button onclick="window.location.href='home.html'">🔙 Back to Home</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/stellar-sdk@10.4.0/dist/stellar-sdk.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!-- Firebase compat version -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<script>
+  // Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCy8onPnPTKTFMd5Nu6ASzbwgyMlyWr0YM",
+    authDomain: "paymate-e7be4.firebaseapp.com",
+    projectId: "paymate-e7be4",
+    storageBucket: "paymate-e7be4.firebasestorage.app",
+    messagingSenderId: "816503320540",
+    appId: "1:816503320540:web:2a69855b7b787606b62919",
+    measurementId: "G-4SC4SBST3S"
+  };
+
+  // Initialize Firebase
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  } else {
+    firebase.app(); // if already initialized, use that one
+  }
+
+  // Firestore initialization
+  const db = firebase.firestore();
+</script>
+  <script src="../js/common.js"></script>
+  <script src="../js/receive.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Group Split History | PayMate</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .loading {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>📄 Group Split History</h2>
+    <div id="splitHistoryContainer">
+      <p class="loading">Loading history...</p>
+    </div>
+
+    <br><br>
+    <button onclick="window.location.href='split.html'">➕ New Split</button>
+    <button onclick="window.location.href='home.html'">🏠 Back to Dashboard</button>
+  </div>
+
+  <!-- Firebase compat version -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<script>
+  // Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCy8onPnPTKTFMd5Nu6ASzbwgyMlyWr0YM",
+    authDomain: "paymate-e7be4.firebaseapp.com",
+    projectId: "paymate-e7be4",
+    storageBucket: "paymate-e7be4.firebasestorage.app",
+    messagingSenderId: "816503320540",
+    appId: "1:816503320540:web:2a69855b7b787606b62919",
+    measurementId: "G-4SC4SBST3S"
+  };
+
+  // Initialize Firebase
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  } else {
+    firebase.app(); // if already initialized, use that one
+  }
+
+  // Firestore initialization
+  const db = firebase.firestore();
+</script>
+  <script src="../js/split-history.js"></script>
+  
+</body>
+</html>

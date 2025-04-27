@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Set Up Wallet</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- <div class="container">
+    <h1>Set Up Your Wallet</h1>
+    <form id="walletSetupForm">
+      <label for="publicKeyInput">Enter your Stellar public key:</label>
+      <input type="text" id="publicKeyInput" placeholder="GABCD..." required>
+      <button type="submit">Save Wallet Address</button>
+    </form>
+  </div> -->
+
+  <div class="container">
+    <h1>Set Up Your Wallet</h1>
+    <form id="walletSetupForm">
+      <label for="publicKeyInput">Enter your Stellar public key:</label>
+      <input 
+        type="text" 
+        id="publicKeyInput" 
+        placeholder="GABCD..." 
+        required
+      >
+      <button type="submit">Save Wallet Address</button>
+    </form>
+  </div>
+
+  <!-- Firebase compat version -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<script>
+  // Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCy8onPnPTKTFMd5Nu6ASzbwgyMlyWr0YM",
+    authDomain: "paymate-e7be4.firebaseapp.com",
+    projectId: "paymate-e7be4",
+    storageBucket: "paymate-e7be4.firebasestorage.app",
+    messagingSenderId: "816503320540",
+    appId: "1:816503320540:web:2a69855b7b787606b62919",
+    measurementId: "G-4SC4SBST3S"
+  };
+
+  // Initialize Firebase
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  } else {
+    firebase.app(); // if already initialized, use that one
+  }
+
+  // Firestore initialization
+  const db = firebase.firestore();
+</script>
+  <script src="../js/setup.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analytics</title>
+  <script src="https://cdn.jsdelivr.net/npm/stellar-sdk@10.4.0/dist/stellar-sdk.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📊 Payment Analytics</h1>
+    <div id="transaction-history"></div>
+    <canvas id="spendingChart"></canvas>
+    <canvas id="recipientChart" style="margin-top: 20px;"></canvas>
+    <!-- <div class="chart-container">
+      <canvas id="spendingChart"></canvas>
+    </div>
+    
+    <div class="chart-container" style="margin-top: 30px;">
+      <canvas id="recipientChart"></canvas>
+    </div> -->
+    <br><br>
+    <!-- <button onclick="window.location.href='receive.html'">⬅️ Back to Receive</button> -->
+  </div>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/stellar-sdk@10.4.0/lib/stellar-sdk.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
+  <!-- Firebase compat version -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<script>
+  // Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCy8onPnPTKTFMd5Nu6ASzbwgyMlyWr0YM",
+    authDomain: "paymate-e7be4.firebaseapp.com",
+    projectId: "paymate-e7be4",
+    storageBucket: "paymate-e7be4.firebasestorage.app",
+    messagingSenderId: "816503320540",
+    appId: "1:816503320540:web:2a69855b7b787606b62919",
+    measurementId: "G-4SC4SBST3S"
+  };
+
+  // Initialize Firebase
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  } else {
+    firebase.app(); // if already initialized, use that one
+  }
+
+  // Firestore initialization
+  const db = firebase.firestore();
+</script>
+  <script src="../js/analytics.js"></script>
+  <script src="../js/common.js"></script>
+</body>
+</html>

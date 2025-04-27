@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function fetchTransactionsFromFirestore() {
     db.collection("transactions")
       .orderBy("timestamp", "desc")
-      .limit(10)
+      // .limit(10)
       .get()
       .then((querySnapshot) => {
         const transactionList = document.getElementById("transaction-list");

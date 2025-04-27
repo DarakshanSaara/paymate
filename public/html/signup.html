@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up | PayMate</title>
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+  <!-- Changed id to match login page and added same container class -->
+  <div id="loginPage">
+    <div class="login-container">
+      <h2>Create Your PayMate Account</h2>
+      <form id="signupForm">
+        <input type="text" id="signupUsername" placeholder="Choose Username" required />
+        <input type="password" id="signupPassword" placeholder="Create Password" required />
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+
+        <div class="captcha-container">
+          <span id="signupCaptchaText" class="captcha-text"></span>
+          <button type="button" id="refreshSignupCaptcha" class="refresh-btn">↻</button>
+        </div>
+
+        <input type="text" id="signupCaptchaInput" placeholder="Enter Captcha" required />
+        <button type="submit">Sign Up</button>
+      </form>
+      <p class="signup-link">Already have an account? <a href="index.html">Log in</a></p>
+    </div>
+  </div>
+
+  <!-- Firebase compat version -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<script>
+  // Your Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCy8onPnPTKTFMd5Nu6ASzbwgyMlyWr0YM",
+    authDomain: "paymate-e7be4.firebaseapp.com",
+    projectId: "paymate-e7be4",
+    storageBucket: "paymate-e7be4.firebasestorage.app",
+    messagingSenderId: "816503320540",
+    appId: "1:816503320540:web:2a69855b7b787606b62919",
+    measurementId: "G-4SC4SBST3S"
+  };
+
+  // Initialize Firebase
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  } else {
+    firebase.app(); // if already initialized, use that one
+  }
+
+  // Firestore initialization
+  const db = firebase.firestore();
+</script>
+  <script src="../js/signup.js"></script>
+  
+</body>
+</html>

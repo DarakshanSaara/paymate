@@ -564,5 +564,5 @@ function saveTransactionToFirebase(sender, receiver, amount) {
 function logout() {
   localStorage.removeItem('loggedIn');
   localStorage.removeItem('currentUser');
-  window.location.href = 'home.html';
+  window.location.href = '../index.html';
 }
