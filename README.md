@@ -128,6 +128,20 @@ Ensure you're connected to the internet since it depends on Stellar and Firebase
 
 ---
 
+### 🎬 Demo
+
+# Login:
+![Screenshot 2025-04-27 230056](https://github.com/user-attachments/assets/a4874ce7-5a86-4f7a-93c0-c4827929f1d3)
+# Dashboard:
+![Screenshot 2025-04-27 200829](https://github.com/user-attachments/assets/6f25193a-0724-481d-b9d8-58aeb7521926)
+![Screenshot 2025-04-27 200959](https://github.com/user-attachments/assets/05778bc8-190c-4865-bc47-00b288a737cc)
+# Features:
+![Screenshot 2025-04-27 205721](https://github.com/user-attachments/assets/981c9329-89d3-4f73-bc3e-9b51be79ab4b)
+![Screenshot 2025-04-27 205750](https://github.com/user-attachments/assets/83ac47b1-a4e8-4652-b63b-e94fe8f1bae3)
+![Screenshot 2025-04-27 205222](https://github.com/user-attachments/assets/c468a174-389e-4206-847b-8758d5d3918b)
+
+---
+
 📦 Future Enhancements
 🔒 OAuth login or Google Auth
 🖥️ Backend & Data
